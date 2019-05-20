@@ -3,6 +3,7 @@ from urllib import request
 from bs4 import BeautifulSoup
 
 from dto.product import Product
+from web_site.ali_shop.ali_js_parser import AliJsParser
 
 
 class ShopSpider(object):
@@ -54,5 +55,5 @@ class ShopSpider(object):
 
         # detail info url
         detail_url = detail_html["data-tfs-url"]
-        detail_content = ShopSpider.parseJs(detail_url)
+        detail_content = AliJsParser.parse_js(detail_url)
         return Product(product_url, title, head, detail_content["content"], detail_content["images"], detail_url)

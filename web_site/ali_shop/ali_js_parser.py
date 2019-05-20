@@ -15,19 +15,19 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 class AliJsParser(object):
     @staticmethod
-    def parseJs(url):
-        response = request.urlopen(url).read().decode("gbk")
+    def parse_js(js_url):
+        response = request.urlopen(js_url).read().decode("gbk")
 
         detail_content_text = execjs.compile(response).eval('offer_details')['content']
 
         detail_content_html = BeautifulSoup(detail_content_text, "html.parser")
 
         content = detail_content_html.text
-        image_links = [img["src"] for img in detail_content_html.find_all("img",src=True)]
+        image_links = [img["src"] for img in detail_content_html.find_all("img", src=True)]
 
-        return {"content":content,"images":image_links}
+        return {"content": content, "images": image_links}
 
 
 if __name__ == '__main__':
     url = "https://img.alicdn.com/tfscom/TB1LzRVGFzqK1RjSZFoXXbfcXXa"
-    print("ali_js",AliJsParser.parseJs(url))
+    print("ali_js", AliJsParser.parseJs(url))

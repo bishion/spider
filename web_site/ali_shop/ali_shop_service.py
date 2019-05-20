@@ -8,11 +8,11 @@ class AliShopService(object):
 
     @staticmethod
     def check_jixianci(main_url):
-        check_result = ()
+        check_result = []
         # 获取所有商品链接
-        all_links = ShopSpider().get_all_links_by_first_page(main_url)
+        # all_links = ShopSpider().get_all_links_by_first_page(main_url)
 
-        # all_links = ("https://detail.1688.com/offer/562007279823.html")
+        all_links = ["https://detail.1688.com/offer/562007279823.html"]
         # 迭代爬取所有商品,并逐一校验
         for item in all_links:
             try:
@@ -28,5 +28,6 @@ class AliShopService(object):
     def show_result(result_list):
         if not result_list:
             print("数据为空")
+            return
         for result in result_list:
             print(result)

@@ -20,12 +20,12 @@ class CheckResultDTO(object):
             return
         else:
             if self.title_result:
-                main_info = main_info + ",标题："+self.title_result
+                main_info = main_info + ",标题："+str(self.title_result)
             if self.head_result:
-                main_info = main_info + ",购买信息:"+self.head_result
+                main_info = main_info + ",购买信息:"+str(self.head_result)
             if self.content_result:
-                main_info = main_info + ",详情:"+self.content_result
+                main_info = main_info + ",详情:"+str(self.content_result)
             if self.image_result:
-                main_info = main_info + ",图片:" + self.image_result
+                main_info = main_info + ",图片:" + str(self.image_result)
 
         return main_info
