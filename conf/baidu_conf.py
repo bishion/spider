@@ -40,6 +40,7 @@ class BaiduTokenService(object):
             conf.set("baidu", "token", self.token)
             with open("/home/bishion/ocr.ini", "w") as configfile:
                 conf.write(configfile)
+        return self.token
 
     @staticmethod
     def request_for_token(api_key, secret_key):
