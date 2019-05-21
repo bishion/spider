@@ -1,5 +1,8 @@
-import traceback, requests
+import requests
+import traceback
+
 from conf.baidu_conf import baidu_token_service
+
 """
 该类主要通过百度的ocr接口将图片中的文字返回
 """

@@ -1,5 +1,7 @@
+import json
+import re
 from urllib import request, parse
-import json, re
+
 from conf.white_list_conf import white_list_service
 
 

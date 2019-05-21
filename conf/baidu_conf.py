@@ -1,4 +1,7 @@
-import urllib, json,configparser, time
+import configparser
+import json
+import time
+import urllib
 from urllib import request
 
 baidu_token_time = 30 * 24 * 3600
